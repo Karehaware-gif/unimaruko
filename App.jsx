@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
-import Comments from "./Comments"; //
-import { db } from "./firebase";
+import Comments from "./Comments";
+import { auth, db } from "./firebase";
+import { onAuthStateChanged, signInAnonymously } from "firebase/auth";
 import {
   collection,
   addDoc,
@@ -273,6 +274,13 @@ export default function App() {
   const [showNewPost, setShowNewPost] = useState(false);
   const [commentTargetId, setCommentTargetId] = useState(null);
   const [loading, setLoading] = useState(true);
+  //
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, async (user) => {
+      if (!user) await signInAnonymously(auth);
+    });
+    return () => unsub();
+  }, []);
 
   // Load from Firebase
   useEffect(() => {
