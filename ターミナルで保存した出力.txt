@@ -1,0 +1,24 @@
+Last login: Sat Feb  7 22:53:10 on ttys009
+akimoto@MacBook-Pro-78 ~ % cd ~/Documents/ごまのサイト
+npm run dev
+
+
+> fictional-news@0.0.0 dev
+> vite
+
+Port 5173 is in use, trying another one...
+
+  VITE v7.3.1  ready in 89 ms
+
+  ➜  Local:   http://localhost:5174/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+
+
+
+
+
+
+
+
